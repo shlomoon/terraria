@@ -7,88 +7,298 @@
       name="description"
       content="Terraris Smart Agriculture Solutions - IoT and AI for Modern Farming"
     />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/src/assets/images/favicon.svg"
+    <meta
+      name="keywords"
+      content="smart agriculture, IoT farming, agricultural technology, crop monitoring, precision farming"
     />
+    <meta name="author" content="Terraris" />
+    <meta name="theme-color" content="#33d657" />
+    <meta property="og:title" content="Solutions - Terraris" />
+    <meta
+      property="og:description"
+      content="Terraris Smart Agriculture Solutions - IoT and AI for Modern Farming"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://terraris.com/solutions" />
+    <meta property="og:image" content="/src/assets/images/hero/hero-main.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Solutions - Terraris</title>
   </head>
   <body>
+    <div class="top-bar">
+      <div class="container top-bar__container">
+        <div class="top-bar__links">
+          <a href="#" data-i18n="nav.knowledge">Knowledge Center</a>
+          <a href="#" data-i18n="nav.login">Login</a>
+        </div>
+        <div class="language-selector">
+          <button class="language-selector__button" id="langButton">
+            <img
+              src="/src/assets/images/flags/en.svg"
+              alt="English"
+              id="currentFlag"
+            />
+            <span id="currentLang">English</span>
+          </button>
+          <div class="language-selector__dropdown" id="langDropdown">
+            <a href="#" class="language-selector__item" data-lang="en">
+              <img src="/src/assets/images/flags/en.svg" alt="English" />
+              <span>English</span>
+            </a>
+            <a href="#" class="language-selector__item" data-lang="pt">
+              <img src="/src/assets/images/flags/pt.svg" alt="Portuguese" />
+              <span>Português</span>
+            </a>
+            <a href="#" class="language-selector__item" data-lang="de">
+              <img src="/src/assets/images/flags/de.svg" alt="German" />
+              <span>Deutsch</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <header class="header">
       <div class="container">
-        <div class="header__logo">
-          <a href="/">
-            <img
-              src="/src/assets/images/terraris-logo.svg"
-              alt="Terraris Logo"
-              class="logo"
-              width="200"
-              height="auto"
-            />
-          </a>
-        </div>
-        <h1 class="header__title">Smart Agriculture Solutions</h1>
+        <a href="/" class="logo">
+          <img src="/src/assets/images/terraris-logo.webp" alt="Terraris - Connected Future" class="logo-full" />
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="nav">
-          <a href="/pages/home.html" class="nav__link" data-i18n-nav="home"
-            >Home</a
-          >
-          <a
-            href="/pages/solutions.html"
-            class="nav__link"
-            data-i18n-nav="solutions"
-            >Solutions</a
-          >
-          <a
-            href="/pages/products.html"
-            class="nav__link"
-            data-i18n-nav="products"
-            >Products</a
-          >
-          <a
-            href="/pages/contact.html"
-            class="nav__link"
-            data-i18n-nav="contact"
-            >Contact</a
-          >
-          <select
-            id="language-selector"
-            class="language-selector"
-            aria-label="Select Language"
-          >
-            <option value="en">English</option>
-            <option value="pt">Português</option>
-            <option value="de">Deutsch</option>
-          </select>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="/" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link active" data-i18n-nav="solutions"
+                >Solutions</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link" data-i18n-nav="about">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#media" class="nav__link" data-i18n-nav="media">Media</a>
+            </li>
+            <li class="nav__item">
+              <a
+                href="#contact"
+                class="btn btn--primary"
+                data-i18n-nav="contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
 
-    <main class="main">
+    <section class="page-header">
       <div class="container">
-        <section id="content" class="content" data-aos="fade-up">
-          <h2 class="content__title">Our Solutions</h2>
-          <!-- Solutions content will go here -->
-        </section>
+        <h1 class="page-header__title" data-aos="fade-up">Our Solutions</h1>
+        <p
+          class="page-header__subtitle"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Discover how our advanced IoT and AI technologies can transform your
+          agricultural operations
+        </p>
       </div>
-    </main>
+    </section>
+
+    <section class="solutions-detail">
+      <div class="container">
+        <div class="solutions-grid">
+          <div
+            class="solution-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="800"
+          >
+            <div class="solution-card__icon">
+              <img
+                src="/src/assets/images/features/crop-monitoring.svg"
+                alt="Crop Monitoring"
+              />
+            </div>
+            <h2 class="solution-card__title">Crop Monitoring</h2>
+            <p class="solution-card__description">
+              Our advanced crop monitoring system uses IoT sensors to collect
+              real-time data on soil moisture, temperature, and crop health.
+              This data is analyzed using our proprietary AI algorithms to
+              provide actionable insights for farmers.
+            </p>
+            <ul class="solution-card__features">
+              <li>Real-time soil moisture monitoring</li>
+              <li>Temperature and humidity tracking</li>
+              <li>Crop health analysis using computer vision</li>
+              <li>Predictive analytics for yield optimization</li>
+            </ul>
+          </div>
+
+          <div
+            class="solution-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="800"
+          >
+            <div class="solution-card__icon">
+              <img
+                src="/src/assets/images/features/smart-irrigation.svg"
+                alt="Smart Irrigation"
+              />
+            </div>
+            <h2 class="solution-card__title">Smart Irrigation</h2>
+            <p class="solution-card__description">
+              Our smart irrigation system optimizes water usage by delivering
+              precisely the right amount of water exactly when and where it's
+              needed. The system integrates with weather forecasts and soil
+              moisture data to make intelligent irrigation decisions.
+            </p>
+            <ul class="solution-card__features">
+              <li>Automated irrigation scheduling</li>
+              <li>Weather-adaptive watering</li>
+              <li>Zone-specific irrigation control</li>
+              <li>Water usage analytics and reporting</li>
+            </ul>
+          </div>
+
+          <div
+            class="solution-card"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-duration="800"
+          >
+            <div class="solution-card__icon">
+              <img
+                src="/src/assets/images/features/environmental-monitoring.svg"
+                alt="Environmental Monitoring"
+              />
+            </div>
+            <h2 class="solution-card__title">Environmental Monitoring</h2>
+            <p class="solution-card__description">
+              Our environmental monitoring solution tracks temperature,
+              humidity, and weather conditions to help protect your crops from
+              adverse conditions. The system provides early warnings for frost,
+              heat stress, and other environmental threats.
+            </p>
+            <ul class="solution-card__features">
+              <li>Microclimate monitoring</li>
+              <li>Frost and heat stress alerts</li>
+              <li>Weather pattern analysis</li>
+              <li>Environmental impact assessment</li>
+            </ul>
+          </div>
+
+          <div
+            class="solution-card"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-duration="800"
+          >
+            <div class="solution-card__icon">
+              <img
+                src="/src/assets/images/features/asset-tracking.svg"
+                alt="Asset Tracking"
+              />
+            </div>
+            <h2 class="solution-card__title">Asset Tracking</h2>
+            <p class="solution-card__description">
+              Our asset tracking solution helps you monitor and manage your
+              agricultural equipment and livestock in real-time. GPS tracking,
+              usage analytics, and maintenance scheduling ensure optimal
+              utilization of your farm assets.
+            </p>
+            <ul class="solution-card__features">
+              <li>GPS tracking for equipment and livestock</li>
+              <li>Usage and efficiency analytics</li>
+              <li>Maintenance scheduling and alerts</li>
+              <li>Theft prevention and recovery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="cta__title" data-i18n-cta="title">
+          Ready to Transform Your Agriculture?
+        </h2>
+        <p class="cta__subtitle" data-i18n-cta="subtitle">
+          Join the future of farming with our advanced IoT and AI solutions.
+        </p>
+        <a href="#contact" class="btn btn--primary" data-i18n-cta="button"
+          >Get Started</a
+        >
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title" data-i18n-contact="title">Contact Us</h2>
+        <form class="contact__form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Name"
+              data-i18n-contact="name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Email"
+              data-i18n-contact="email"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Message"
+              data-i18n-contact="message"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn--primary"
+            data-i18n-contact="submit"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
 
     <footer class="footer">
       <div class="container">
-        <div class="footer__grid">
-          <div class="footer__section">
-            <h4 data-i18n-footer="contactTitle">Contact Us</h4>
-            <p><a href="mailto:info@terraris.com">info@terraris.com</a></p>
-            <p><a href="tel:+41123456789">+41 123 456 789</a></p>
+        <div class="footer__content">
+          <div class="footer__logo">
+            <img src="/src/assets/images/terraris-logo.webp" alt="Terraris - Connected Future" class="logo-full" />
           </div>
-          <div class="footer__section">
-            <h4 data-i18n-footer="locationTitle">Location</h4>
-            <p data-i18n-footer="address">Zurich, Switzerland</p>
+          <div class="footer__links">
+            <a href="/privacy" data-i18n-footer="privacy">Privacy Policy</a>
+            <a href="/terms" data-i18n-footer="terms">Terms of Service</a>
+            <a href="#contact">Contact Us</a>
+            <a href="/">Home</a>
           </div>
-          <div class="footer__section">
-            <p class="footer__copyright" data-i18n-footer="copyright">
-              &copy; 2025 Terraris. All rights reserved.
-            </p>
+          <div class="footer__copyright" data-i18n-footer="copyright">
+            © 2025 Terraris. All rights reserved.
           </div>
         </div>
       </div>

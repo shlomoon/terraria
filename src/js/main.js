@@ -2,14 +2,96 @@ import "../styles/main.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Initialize AOS (Animate on Scroll)
-AOS.init({
-  duration: 800,
-  once: true,
-  offset: 100,
+// Initialize AOS (Animate on Scroll) with optimized settings
+document.addEventListener("DOMContentLoaded", () => {
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100,
+    disable: window.innerWidth < 768, // Disable on mobile for better performance
+    startEvent: 'DOMContentLoaded',
+    mirror: false,
+    anchorPlacement: 'top-bottom',
+    easing: 'ease-out-cubic'
+  });
+
+  // Initialize all components
+  initLanguageSelector();
+  initCarousel();
+  initMobileMenu();
+  initContactForm();
+  initImageLoading();
+  initHeaderScroll();
+  initAnimations();
 });
 
-// Translation System
+// Header scroll effect
+function initHeaderScroll() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+  
+  const scrollThreshold = 50;
+  
+  function handleScroll() {
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  
+  // Initial check
+  handleScroll();
+  
+  // Add scroll event listener
+  window.addEventListener('scroll', handleScroll);
+}
+
+// Add AOS animations to elements
+function initAnimations() {
+  // Feature cards
+  document.querySelectorAll('.feature-card').forEach((card, index) => {
+    card.setAttribute('data-aos', 'fade-up');
+    card.setAttribute('data-aos-delay', (index * 100).toString());
+  });
+  
+  // Section titles
+  document.querySelectorAll('.section-title').forEach(title => {
+    title.setAttribute('data-aos', 'fade-up');
+  });
+  
+  // CTA section
+  const cta = document.querySelector('.cta');
+  if (cta) {
+    cta.setAttribute('data-aos', 'fade-up');
+    
+    const ctaTitle = cta.querySelector('.cta__title');
+    if (ctaTitle) {
+      ctaTitle.setAttribute('data-aos', 'fade-up');
+      ctaTitle.setAttribute('data-aos-delay', '100');
+    }
+    
+    const ctaSubtitle = cta.querySelector('.cta__subtitle');
+    if (ctaSubtitle) {
+      ctaSubtitle.setAttribute('data-aos', 'fade-up');
+      ctaSubtitle.setAttribute('data-aos-delay', '200');
+    }
+    
+    const ctaButton = cta.querySelector('.btn');
+    if (ctaButton) {
+      ctaButton.setAttribute('data-aos', 'fade-up');
+      ctaButton.setAttribute('data-aos-delay', '300');
+    }
+  }
+  
+  // Contact form
+  const contactForm = document.querySelector('.contact__form');
+  if (contactForm) {
+    contactForm.setAttribute('data-aos', 'fade-up');
+  }
+}
+
+// Translation System - Organized by language
 const translations = {
   en: {
     nav: {
@@ -61,7 +143,7 @@ const translations = {
       submit: "Send Message",
     },
     footer: {
-      copyright: "© 2023 Terraris. All rights reserved.",
+      copyright: "© 2025 Terraris. All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
     },
@@ -116,7 +198,7 @@ const translations = {
       submit: "Enviar Mensagem",
     },
     footer: {
-      copyright: "© 2023 Terraris. Todos os direitos reservados.",
+      copyright: "© 2025 Terraris. Todos os direitos reservados.",
       privacy: "Política de Privacidade",
       terms: "Termos de Serviço",
     },
@@ -171,7 +253,7 @@ const translations = {
       submit: "Nachricht senden",
     },
     footer: {
-      copyright: "© 2023 Terraris. Alle Rechte vorbehalten.",
+      copyright: "© 2025 Terraris. Alle Rechte vorbehalten.",
       privacy: "Datenschutzrichtlinie",
       terms: "Nutzungsbedingungen",
     },
@@ -312,21 +394,13 @@ function updateLanguage(lang) {
   });
 }
 
-// Initialize when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  initLanguageSelector();
-  initCarousel();
+// Mobile Menu initialization
+function initMobileMenu() {
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const nav = document.querySelector(".nav");
 
-  // Initialize with saved language or default
-  const savedLanguage = localStorage.getItem("selectedLanguage") || "en";
-  updateLanguage(savedLanguage);
-});
+  if (!mobileMenuToggle || !nav) return;
 
-// Mobile Menu
-const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-const nav = document.querySelector(".nav");
-
-if (mobileMenuToggle && nav) {
   mobileMenuToggle.addEventListener("click", () => {
     mobileMenuToggle.classList.toggle("active");
     nav.classList.toggle("active");
@@ -343,20 +417,20 @@ if (mobileMenuToggle && nav) {
       document.body.style.overflow = "";
     });
   });
-}
 
-// Close menu when clicking outside
-document.addEventListener("click", (e) => {
-  if (
-    nav?.classList.contains("active") &&
-    !nav.contains(e.target) &&
-    !mobileMenuToggle.contains(e.target)
-  ) {
-    mobileMenuToggle.classList.remove("active");
-    nav.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-});
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      nav.classList.contains("active") &&
+      !nav.contains(e.target) &&
+      !mobileMenuToggle.contains(e.target)
+    ) {
+      mobileMenuToggle.classList.remove("active");
+      nav.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+}
 
 // Hero Carousel
 function initCarousel() {
@@ -484,7 +558,64 @@ function initImageLoading() {
   });
 }
 
-// Initialize image loading optimization
-document.addEventListener("DOMContentLoaded", () => {
-  initImageLoading();
-});
+// Contact form handling
+function initContactForm() {
+  const contactForm = document.querySelector('.contact__form');
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
+    // Validate form data
+    if (!name || !email || !message) {
+      showFormMessage('Please fill in all fields', 'error');
+      return;
+    }
+    
+    if (!isValidEmail(email)) {
+      showFormMessage('Please enter a valid email address', 'error');
+      return;
+    }
+    
+    // In a real application, you would send the form data to a server
+    // For now, we'll just simulate a successful submission
+    showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
+    contactForm.reset();
+  });
+  
+  // Helper function to validate email
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
+  // Helper function to show form messages
+  function showFormMessage(message, type) {
+    // Remove any existing message
+    const existingMessage = contactForm.querySelector('.form-message');
+    if (existingMessage) {
+      existingMessage.remove();
+    }
+    
+    // Create and add new message
+    const messageElement = document.createElement('div');
+    messageElement.className = `form-message form-message--${type}`;
+    messageElement.textContent = message;
+    
+    contactForm.appendChild(messageElement);
+    
+    // Remove message after 5 seconds
+    setTimeout(() => {
+      messageElement.classList.add('form-message--fade-out');
+      setTimeout(() => {
+        messageElement.remove();
+      }, 500);
+    }, 5000);
+  }
+}
