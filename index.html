@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Terraris - Advanced IoT and AI Solutions for Smart Agriculture and Sustainable Future"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/src/assets/images/favicon.svg"
+    />
+    <title>Terraris - Smart Agriculture Solutions</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container top-bar__container">
+        <div class="top-bar__links">
+          <a href="#" data-i18n="nav.knowledge">Knowledge Center</a>
+          <a href="#" data-i18n="nav.login">Login</a>
+        </div>
+        <div class="language-selector">
+          <button class="language-selector__button" id="langButton">
+            <img
+              src="/src/assets/images/flags/en.svg"
+              alt="English"
+              id="currentFlag"
+            />
+            <span id="currentLang">English</span>
+          </button>
+          <div class="language-selector__dropdown" id="langDropdown">
+            <a href="#" class="language-selector__item" data-lang="en">
+              <img src="/src/assets/images/flags/en.svg" alt="English" />
+              <span>English</span>
+            </a>
+            <a href="#" class="language-selector__item" data-lang="pt">
+              <img src="/src/assets/images/flags/pt.svg" alt="Portuguese" />
+              <span>Português</span>
+            </a>
+            <a href="#" class="language-selector__item" data-lang="de">
+              <img src="/src/assets/images/flags/de.svg" alt="German" />
+              <span>Deutsch</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <a href="/" class="logo">
+          <img src="/src/assets/images/logo/logo.svg" alt="Terraris" />
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#solutions" class="nav__link" data-i18n-nav="solutions"
+                >Solutions</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link" data-i18n-nav="about">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#media" class="nav__link" data-i18n-nav="media">Media</a>
+            </li>
+            <li class="nav__item">
+              <a href="#partner" class="nav__link" data-i18n-nav="partner"
+                >Be a Partner</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="#contact"
+                class="btn btn--primary"
+                data-i18n-nav="contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="language-selector">
+          <button class="language-selector__button">
+            <img src="/src/assets/images/flags/en.svg" alt="English" />
+            <span>English</span>
+          </button>
+          <div class="language-selector__dropdown">
+            <a href="#" class="language-selector__item" data-lang="en">
+              <img src="/src/assets/images/flags/en.svg" alt="English" />
+              <span>English</span>
+            </a>
+            <a href="#" class="language-selector__item" data-lang="pt">
+              <img src="/src/assets/images/flags/pt.svg" alt="Português" />
+              <span>Português</span>
+            </a>
+            <a href="#" class="language-selector__item" data-lang="de">
+              <img src="/src/assets/images/flags/de.svg" alt="Deutsch" />
+              <span>Deutsch</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title" data-i18n-hero="title">
+            Smart Agriculture Solutions
+          </h1>
+        </div>
+        <div class="hero__image">
+          <div class="carousel">
+            <div class="carousel__slide active">
+              <img
+                src="/src/assets/images/hero/hero-main.png"
+                alt="Smart Agriculture Technology"
+                loading="eager"
+              />
+            </div>
+            <div class="carousel__slide">
+              <img
+                src="/src/assets/images/hero/hero-2.png"
+                alt="Precision Farming Solutions"
+                loading="lazy"
+              />
+            </div>
+            <div class="carousel__slide">
+              <img
+                src="/src/assets/images/hero/hero-3.png"
+                alt="Agricultural Innovation"
+                loading="lazy"
+              />
+            </div>
+            <div class="carousel__nav">
+              <button
+                class="active"
+                data-slide="0"
+                aria-label="Show first slide"
+              ></button>
+              <button data-slide="1" aria-label="Show second slide"></button>
+              <button data-slide="2" aria-label="Show third slide"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="solutions">
+      <div class="container">
+        <h2 class="section-title" data-i18n-features="title">Our Solutions</h2>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <img
+                src="/src/assets/images/features/crop-monitoring.svg"
+                alt="Crop Monitoring"
+              />
+            </div>
+            <h3
+              class="feature-card__title"
+              data-i18n-features="cropMonitoring.title"
+            >
+              Crop Monitoring
+            </h3>
+            <p
+              class="feature-card__description"
+              data-i18n-features="cropMonitoring.description"
+            >
+              Real-time data on soil moisture, temperature, and crop health for
+              informed decision-making.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <img
+                src="/src/assets/images/features/smart-irrigation.svg"
+                alt="Smart Irrigation"
+              />
+            </div>
+            <h3
+              class="feature-card__title"
+              data-i18n-features="smartIrrigation.title"
+            >
+              Smart Irrigation
+            </h3>
+            <p
+              class="feature-card__description"
+              data-i18n-features="smartIrrigation.description"
+            >
+              Automated irrigation systems based on real-time soil moisture data
+              and weather conditions.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <img
+                src="/src/assets/images/features/environmental-monitoring.svg"
+                alt="Environmental Monitoring"
+              />
+            </div>
+            <h3
+              class="feature-card__title"
+              data-i18n-features="environmentalMonitoring.title"
+            >
+              Environmental Monitoring
+            </h3>
+            <p
+              class="feature-card__description"
+              data-i18n-features="environmentalMonitoring.description"
+            >
+              Track temperature, humidity, and weather conditions to protect
+              your crops.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <img
+                src="/src/assets/images/features/asset-tracking.svg"
+                alt="Asset Tracking"
+              />
+            </div>
+            <h3
+              class="feature-card__title"
+              data-i18n-features="assetTracking.title"
+            >
+              Asset Tracking
+            </h3>
+            <p
+              class="feature-card__description"
+              data-i18n-features="assetTracking.description"
+            >
+              Monitor and manage your agricultural equipment and livestock in
+              real-time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="cta__title" data-i18n-cta="title">
+          Ready to Transform Your Agriculture?
+        </h2>
+        <p class="cta__subtitle" data-i18n-cta="subtitle">
+          Join the future of farming with our advanced IoT and AI solutions.
+        </p>
+        <a href="#contact" class="btn btn--primary" data-i18n-cta="button"
+          >Get Started</a
+        >
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title" data-i18n-contact="title">Contact Us</h2>
+        <form class="contact__form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Name"
+              data-i18n-contact="name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Email"
+              data-i18n-contact="email"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Message"
+              data-i18n-contact="message"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn--primary"
+            data-i18n-contact="submit"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__logo">
+            <img src="/src/assets/images/logo/logo-white.svg" alt="Terraris" />
+          </div>
+          <div class="footer__links">
+            <a href="/privacy" data-i18n-footer="privacy">Privacy Policy</a>
+            <a href="/terms" data-i18n-footer="terms">Terms of Service</a>
+          </div>
+          <div class="footer__copyright" data-i18n-footer="copyright">
+            © 2023 Terraris. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

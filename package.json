@@ -1,0 +1,18 @@
+{
+  "name": "terraris-website",
+  "version": "1.0.0",
+  "description": "Terraris - Smart Agriculture Solutions",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "aos": "^2.3.4"
+  },
+  "devDependencies": {
+    "sass": "^1.58.3",
+    "terser": "^5.39.0",
+    "vite": "^4.1.4"
+  }
+}
